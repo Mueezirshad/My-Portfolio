@@ -1,0 +1,118 @@
+import {
+  RiReactjsLine,
+  RiNextjsFill,
+  RiNodejsFill,
+} from "react-icons/ri";
+
+import {
+  SiJavascript,
+  SiExpress,
+  SiMongodb,
+  SiFirebase,
+  SiTailwindcss,
+  SiGithub,
+} from "react-icons/si";
+
+export const personalInfo = {
+  name: "Moeez Irshad",
+  brand: "Moeezirshad.dev",
+  role: "Full Stack Developer",
+  email: "your@email.com",
+  location: "Karachi, Pakistan",
+};
+
+export const techStack = [
+  {
+    name: "React",
+    icon: RiReactjsLine,
+  },
+  {
+    name: "Next.js",
+    icon: RiNextjsFill,
+  },
+  {
+    name: "JavaScript",
+    icon: SiJavascript,
+  },
+  {
+    name: "Node.js",
+    icon: RiNodejsFill,
+  },
+  {
+    name: "Express",
+    icon: SiExpress,
+  },
+  {
+    name: "MongoDB",
+    icon: SiMongodb,
+  },
+  {
+    name: "Firebase",
+    icon: SiFirebase,
+  },
+  {
+    name: "Tailwind CSS",
+    icon: SiTailwindcss,
+  },
+  {
+    name: "GitHub",
+    icon: SiGithub,
+  },
+];
+export const projects = [
+  {
+    title: "VanishMart",
+    description:
+      "A modern full-stack e-commerce platform with authentication, Cloudinary image uploads and Stripe payments.",
+
+    image: "/projects/vanishmart.png",
+
+    tech: [
+      "Next.js",
+      "Node.js",
+      "MongoDB",
+      "Stripe",
+    ],
+
+    
+  },
+
+  {
+    title: "Saylani Portal",
+
+    description:
+      "Student management portal with Lost & Found, Complaints and Volunteer Registration.",
+
+    image: "/projects/saylani.png",
+
+    tech: [
+      "Next.js",
+      "Firebase",
+      "Tailwind",
+    ],
+
+    live: "#",
+
+    github: "#",
+  },
+
+  {
+    title: "Portfolio",
+
+    description:
+      "Personal portfolio built with Next.js, Framer Motion and premium UI animations.",
+
+    image: "/projects/portfolio.png",
+
+    tech: [
+      "Next.js",
+      "Framer Motion",
+      "Tailwind",
+      "MongoDB"
+    ],
+
+    live: "#",
+
+    github: "#",
+  },
+];
