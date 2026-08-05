@@ -42,17 +42,46 @@ export default function HeroContent() {
   />
 </h2>
 
-      <p className="mt-6 max-w-xl text-lg leading-8 text-gray-400">
+      <p className="mt-8 max-w-2xl text-lg leading-9 text-zinc-400">
         I build fast, scalable and modern web applications using
         React, Next.js, Node.js, Express.js and MongoDB with a
         strong focus on clean UI, performance and user experience.
       </p><br />
-      <p className="inline-flex items-center rounded-full border border-purple-500/30 bg-purple-500/10 px-4 py-2 text-sm text-purple-300">
-        🟢 Available for Internship & Freelance
-      </p>
+      <div className="mt-8 flex">
+  <div
+    className="
+      group
+      inline-flex
+      items-center
+      gap-3
+      rounded-full
+      border
+      border-purple-500/20
+      bg-white/[0.03]
+      px-5
+      py-3
+      backdrop-blur-xl
+      transition-all
+      duration-500
+      hover:border-purple-400/50
+      hover:bg-purple-500/10
+      hover:shadow-[0_0_35px_rgba(168,85,247,0.25)]
+    "
+  >
+    <span className="relative flex h-3 w-3">
+      <span className="absolute inline-flex h-full w-full animate-ping rounded-full npbg-lime-500 opacity-70"></span>
+
+      <span className="relative inline-flex h-3 w-3 rounded-full bg-lime-500"></span>
+    </span>
+
+    <span className="text-sm font-medium tracking-wide text-zinc-200">
+      Available for Internship & Freelance
+    </span>
+  </div>
+</div>
       <HeroButtons />
 
       <HeroSocial />
-    </motion.div>
+    </motion.div >
   );
 }

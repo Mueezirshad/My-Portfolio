@@ -1,5 +1,6 @@
-import { Inter, Space_Grotesk } from "next/font/google";
+import { Inter, Space_Grotesk, Rubik_Glitch } from "next/font/google";
 import "./globals.css";
+import CosmicBackground from "@/Components/cosmicbg/Cosmic";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -11,22 +12,28 @@ const spaceGrotesk = Space_Grotesk({
   variable: "--font-space",
 });
 
+const rubikGlitch = Rubik_Glitch({
+  weight: "400",
+  subsets: ["latin"],
+  variable: "--font-glitch",
+});
 
 export const metadata = {
   title: "Moeez Irshad | Full Stack Developer",
   description:
-    "Portfolio of Moeez Irshad - Full Stack Developer specializing in React, Next.js, Node.js, Express.js, and MongoDB.",
+    "Portfolio of Moeez Irshad - Full Stack Developer specializing in React, Next.js, Node.js, Express.js, and web application development.",
 };
 
 export default function RootLayout({ children }) {
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${spaceGrotesk.variable} h-full antialiased`}
+      className={`${inter.variable} ${spaceGrotesk.variable} ${rubikGlitch.variable} h-full antialiased`}
     >
       <body className="min-h-screen flex flex-col bg-background text-foreground">
+        <CosmicBackground />
         {children}
-        </body>
+      </body>
     </html>
   );
 }

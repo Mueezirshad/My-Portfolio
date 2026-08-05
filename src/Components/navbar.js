@@ -1,6 +1,6 @@
 export default function Navbar() {
   return (
-  <nav className="fixed top-0 left-0 w-full bg-purple/30 backdrop-blur-md border-b border-white/10">
+  <nav className="fixed font-glitch z-50 top-0 left-0 w-full bg-purple/30 backdrop-none">
     <div className="max-w-7xl mx-auto flex justify-between gap-2 items-center px-8 py-6">
 
       <h1 className="text-2xl font-bold text-white">

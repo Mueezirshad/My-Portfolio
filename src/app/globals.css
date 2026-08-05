@@ -1,5 +1,5 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Rubik+Glitch&family=Space+Grotesk:wght@300..700&display=swap'); */
 @import "tailwindcss";
-
 /* ===========================
    Design System
 =========================== */
@@ -16,7 +16,7 @@
   /* Fonts */
   --font-body: var(--font-inter);
   --font-heading: var(--font-space);
-
+--font-glitch-family: 'Rubik Glitch', system-ui;
   /* Radius */
   --radius: 1rem;
 }
@@ -26,17 +26,23 @@
   --color-foreground: var(--foreground);
 
   --font-sans: var(--font-body);
+  --font-glitch: var(--font-glitch-family);
 }
-
+.font-glitch {
+  font-family: 'Rubik Glitch', system-ui, sans-serif !important;
+}
 /* ===========================
    Global Styles
 =========================== */
 
 html {
+  overflow-x: hidden;
   scroll-behavior: smooth;
+  scrollbar-gutter: stable;
 }
 
 body {
+  position: relative;
   background: var(--background);
   color: var(--foreground);
   font-family: var(--font-body);
