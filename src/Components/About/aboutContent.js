@@ -26,7 +26,7 @@ export default function AboutContent() {
       className="mx-auto max-w-4xl"
     >
       <h2 className="font-space text-4xl font-bold leading-tight lg:text-5xl">
-        Passionate About Building
+        Passionately Building{" "}
         <span className="block bg-gradient-to-r from-violet-400 via-fuchsia-500 to-cyan-400 bg-clip-text text-transparent">
           Modern Web Experiences
         </span>
@@ -39,51 +39,46 @@ export default function AboutContent() {
         user-friendly digital experiences using the latest web technologies.
       </p>
 
-      {/* Cards */}
+      {/* Info Cards */}
       <div className="mt-12 grid gap-6 md:grid-cols-2">
-        {cards.map((card, index) => (
+        {cards.map((card) => (
           <motion.div
             key={card.title}
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            transition={{
-              duration: 0.6,
-              delay: index * 0.15,
-            }}
-            whileHover={{
-              y: -8,
-              scale: 1.02,
-            }}
+            transition={{ duration: 0.7 }}
             className="
-              group
               rounded-3xl
               border
               border-white/10
               bg-white/5
-              p-7
+              p-6
               backdrop-blur-xl
               transition-all
               duration-300
+              hover:-translate-y-2
               hover:border-purple-500/40
-              hover:shadow-[0_0_35px_rgba(168,85,247,0.2)]
+              hover:shadow-[0_0_30px_rgba(168,85,247,0.2)]
             "
           >
-            <div className="mb-5 flex h-14 w-14 items-center justify-center rounded-2xl bg-purple-500/10 text-3xl">
-              {card.emoji}
-            </div>
+            <span className="text-3xl">{card.emoji}</span>
 
-            <h3 className="text-xl font-semibold text-white">
+            <h3 className="mt-4 text-xl font-bold text-white">
               {card.title}
             </h3>
 
-            <p className="mt-3 leading-7 text-zinc-400">
+            <p className="mt-2 text-zinc-400">
               {card.text}
             </p>
           </motion.div>
         ))}
-      </div><AboutStats />
+      </div>
+
+      {/* Stats Component */}
+      <div className="mt-12">
+        <AboutStats />
+      </div>
     </motion.div>
-    
   );
 }
