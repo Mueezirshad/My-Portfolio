@@ -72,10 +72,10 @@ export default function ParticleMesh() {
         />
       </bufferGeometry>
       <pointsMaterial
-        size={0.06}
+        size={0.03}
         vertexColors
         transparent
-        opacity={0.85}
+        opacity={8.95}
         sizeAttenuation={true}
         depthWrite={false}
       />

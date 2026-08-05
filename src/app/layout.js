@@ -1,6 +1,10 @@
 import { Inter, Space_Grotesk, Rubik_Glitch } from "next/font/google";
 import "./globals.css";
 import CosmicBackground from "@/Components/cosmicbg/Cosmic";
+import CustomCursor from "@/Components/Ui/customerCursor";
+import MouseTrail from "@/Components/Ui/mouseTrail";
+import LoadingScreen from "@/Components/Ui/loadingScreen";
+import ScrollProgress from "@/Components/Ui/scrollProgress";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -32,6 +36,10 @@ export default function RootLayout({ children }) {
     >
       <body className="min-h-screen flex flex-col bg-background text-foreground">
         <CosmicBackground />
+        <LoadingScreen />
+        <ScrollProgress/>
+        <MouseTrail/>
+        <CustomCursor />
         {children}
       </body>
     </html>
