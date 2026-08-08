@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import AboutStats from "./aboutStats";
+import { experience } from "@/data/portfolio";
 
 const cards = [
   {
@@ -79,6 +80,56 @@ export default function AboutContent() {
       <div className="mt-12">
         <AboutStats />
       </div>
+
+      <div className="mt-16">
+
+  <h3 className="mb-8 text-2xl font-bold">
+    My Journey
+  </h3>
+
+  <div className="relative border-l border-purple-500/30 pl-8">
+
+    {experience.map((item) => (
+
+      <div
+        key={item.year}
+        className="relative mb-10"
+      >
+
+        <span
+          className="
+          absolute
+          -left-[42px]
+          top-1
+          h-5
+          w-5
+          rounded-full
+          border-4
+          border-[#070511]
+          bg-purple-500
+          shadow-[0_0_20px_rgba(168,85,247,0.6)]
+          "
+        />
+
+        <p className="text-sm font-semibold text-purple-400">
+          {item.year}
+        </p>
+
+        <h4 className="mt-2 text-xl font-bold">
+          {item.title}
+        </h4>
+
+        <p className="mt-2 leading-7 text-zinc-400">
+          {item.description}
+        </p>
+
+      </div>
+
+    ))}
+
+  </div>
+
+</div>
     </motion.div>
   );
 }

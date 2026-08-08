@@ -5,13 +5,13 @@ import * as THREE from "three";
 
 export default function ParticleMesh() {
   const pointsRef = useRef();
-  const count = 5000; // Total glowing particles
+  const count = 2500; // Total glowing particles
 
   // Generate grid positions and colors
   const [positions, colors] = useMemo(() => {
     const pos = new Float32Array(count * 3);
     const cols = new Float32Array(count * 3);
-    const colorA = new THREE.Color("#4c1d95"); // Dark Deep Violet
+    const colorA = new THREE.Color("red"); // Dark Deep Violet
     const colorB = new THREE.Color("#c084fc"); // Glowing Bright Purple
 
     for (let i = 0; i < count; i++) {
@@ -72,7 +72,7 @@ export default function ParticleMesh() {
         />
       </bufferGeometry>
       <pointsMaterial
-        size={0.03}
+        size={0.04}
         vertexColors
         transparent
         opacity={8.95}

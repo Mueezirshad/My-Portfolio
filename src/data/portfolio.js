@@ -96,26 +96,26 @@ export const projects = [
 
     github: "#",
   },
-
+  
   {
-    title: "Portfolio",
-
+    title: "Clinic Management System",
     description:
-      "Personal portfolio built with Next.js, Framer Motion and premium UI animations.",
+      "A full-stack clinic management system with appointment scheduling, authentication and admin dashboard.",
 
-    image: "/projects/portfolio.png",
+    image: "/projects/clinic.png",
 
     tech: [
       "Next.js",
-      "Framer Motion",
-      "Tailwind",
-      "MongoDB"
+      "Node.js",
+      "MongoDB",
+      "Express",
     ],
 
-    live: "#",
+    live: "https://your-live-link.vercel.app",
 
-    github: "#",
+    github: "https://github.com/yourusername/project",
   },
+
 ];
 export const stats = [
   {
@@ -156,3 +156,4 @@ export const experience = [
       "Built MERN Stack applications using Node.js, Express.js, MongoDB, Firebase and Cloudinary.",
   },
 ];
+

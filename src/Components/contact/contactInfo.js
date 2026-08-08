@@ -12,6 +12,7 @@ const info = [
     icon: Mail,
     title: "Email",
     value: "irshadmoeez10@gmail.com",
+    href: "mailto:irshadmoeez10@gmail.com",
   },
   {
     icon: MapPin,
@@ -62,8 +63,6 @@ export default function ContactInfo() {
               bg-white/5
               p-7
               backdrop-blur-xl
-              transition-all
-              duration-300
               hover:border-purple-500/40
               hover:shadow-[0_0_35px_rgba(168,85,247,0.25)]
             "
@@ -80,8 +79,6 @@ export default function ContactInfo() {
                   rounded-2xl
                   bg-purple-500/10
                   text-purple-400
-                  transition-all
-                  duration-300
                   group-hover:scale-110
                   group-hover:bg-purple-500/20
                 "
@@ -95,9 +92,18 @@ export default function ContactInfo() {
                   {item.title}
                 </h3>
 
-                <p className="mt-1 text-zinc-400">
-                  {item.value}
-                </p>
+                {item.href ? (
+  <a
+    href={item.href}
+    className="mt-1 block text-zinc-400 transition-colors hover:text-purple-300"
+  >
+    {item.value}
+  </a>
+) : (
+  <p className="mt-1 text-zinc-400">
+    {item.value}
+  </p>
+)}
 
               </div>
 

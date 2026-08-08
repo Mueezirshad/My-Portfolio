@@ -46,7 +46,8 @@ export default function TechStack() {
               viewport={{ once: true }}
               transition={{
                 duration: 0.6,
-                delay: index * 0.08,
+                delay: index * 0.12,
+                ease: [0.22, 1, 0.36, 1]
               }}
             >
               <TechCard

@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { ArrowRight, Download } from "lucide-react";
+import MagneticButton from "../Ui/magneticButton";
 
 export default function HeroButtons() {
   // Smooth Framer Motion spring physics
@@ -53,13 +54,13 @@ export default function HeroButtons() {
           "
         />
 
-        <span className="relative flex items-center gap-2">
+        <MagneticButton className="relative flex items-center gap-2">
           View Projects
           <ArrowRight
             size={18}
             className="transition-transform duration-300 group-hover:translate-x-1"
           />
-        </span>
+        </MagneticButton>
       </motion.a>
 
       {/* Secondary Button */}
@@ -89,13 +90,13 @@ export default function HeroButtons() {
           hover:shadow-[0_0_30px_rgba(168,85,247,0.2)]
         "
       >
-        <span className="relative flex items-center gap-2">
+        <MagneticButton className="relative flex items-center gap-2">
           <Download
             size={18}
             className="transition-transform duration-300 group-hover:-translate-y-0.5"
           />
           Download Resume
-        </span>
+        </MagneticButton>
       </motion.a>
     </div>
   );
