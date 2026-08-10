@@ -3,7 +3,6 @@ import { motion } from "framer-motion"
 import HeroButtons from "./heroButtons";
 import HeroSocial from "./heroSocial";
 import { Typewriter } from "react-simple-typewriter";
-import { fadeUp } from "@/lib/animation";
 
 export default function HeroContent() {
   return (
@@ -28,7 +27,7 @@ export default function HeroContent() {
       <h2 className="mt-6 text-2xl font-semibold text-purple-300">
   <Typewriter
     words={[
-      "Full Stack Developer",
+      "Full Stack Developer ",
       "Frontend Developer",
       "Next.js Developer",
       "MERN Stack Developer",
@@ -47,7 +46,7 @@ export default function HeroContent() {
         React, Next.js, Node.js, Express.js and MongoDB with a
         strong focus on clean UI, performance and user experience.
       </p><br />
-      <div className="mt-8 flex">
+      <div className="mt-2 flex">
   <div
     className="
       group
@@ -57,11 +56,9 @@ export default function HeroContent() {
       rounded-full
       border
       border-purple-500/20
-      bg-white/[0.03]
+      bg-transparent
       px-5
-      py-3
-      backdrop-blur-xl
-      transition-all
+      py-2
       duration-500
       hover:border-purple-400/50
       hover:bg-purple-500/10
@@ -80,7 +77,6 @@ export default function HeroContent() {
   </div>
 </div>
       <HeroButtons />
-
       <HeroSocial />
     </motion.div >
   );

@@ -24,7 +24,7 @@ const socials = [
 
 export default function HeroSocial() {
   return (
-    <div className="mt-10 flex items-center gap-5">
+    <div className="mt-4 flex items-center gap-4">
 
       {socials.map((item, index) => {
 

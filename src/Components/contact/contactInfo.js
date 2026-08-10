@@ -60,9 +60,8 @@ export default function ContactInfo() {
               rounded-3xl
               border
               border-white/10
-              bg-white/5
+              bg-transparent
               p-7
-              backdrop-blur-xl
               hover:border-purple-500/40
               hover:shadow-[0_0_35px_rgba(168,85,247,0.25)]
             "

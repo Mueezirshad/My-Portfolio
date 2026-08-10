@@ -8,30 +8,33 @@ export default function HeroImage() {
   const mouseX = useMotionValue(0);
   const mouseY = useMotionValue(0);
 
+  // Smooth springs for fluid 3D tilt in all directions
   const rotateX = useSpring(mouseY, {
-    stiffness: 180,
-    damping: 18,
+    stiffness: 150,
+    damping: 15,
   });
-  
+
   const rotateY = useSpring(mouseX, {
-    stiffness: 180,
-    damping: 18,
+    stiffness: 150,
+    damping: 15,
   });
 
   function handleMove(e) {
-    // FIXED: Correct spelling for getBoundingClientRect
     const rect = e.currentTarget.getBoundingClientRect();
 
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
+    // 1. Calculate relative X and Y positions from the center of the image
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
 
-    mouseX.set((x - rect.width / 1) / 30);
-    mouseY.set(-(y - rect.height / 1) / 30);
+    // 2. Normalize and set tilt values (Divide number controls sensitivity)
+    // Positive/Negative values allow full 360 3D tilting on all axes
+    rotateY.set((x / rect.width) * 25);   // Left-to-Right rotation
+    rotateX.set(-(y / rect.height) * 25);  // Top-to-Bottom rotation
   }
 
   function reset() {
-    mouseX.set(0);
-    mouseY.set(0);
+    rotateX.set(0);
+    rotateY.set(0);
   }
 
   return (
@@ -44,9 +47,9 @@ export default function HeroImage() {
         transformPerspective: 1000,
       }}
       initial={{ opacity: 0, scale: 0.85 }}
-      animate={{ opacity: 14, scale: 1 }}
+      animate={{ opacity: 1, scale: 1 }}
       transition={{ duration: 1 }}
-      className="relative flex items-center justify-center p-4"
+      className="relative flex items-center justify-center p-4 cursor-pointer"
     >
       {/* Background Glow */}
       <motion.div
@@ -66,6 +69,7 @@ export default function HeroImage() {
           rounded-full
           bg-purple-600/20
           blur-[110px]
+          pointer-events-none
         "
       />
 
@@ -85,6 +89,7 @@ export default function HeroImage() {
           border-2
           border-dashed
           border-purple-500/20
+          pointer-events-none
         "
       />
 

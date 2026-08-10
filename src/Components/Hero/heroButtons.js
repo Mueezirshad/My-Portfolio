@@ -15,7 +15,7 @@ export default function HeroButtons() {
   const tapAnimation = { scale: 0.97 };
 
   return (
-    <div className="mt-10 flex flex-wrap gap-5">
+    <div className="mt-6 flex flex-wrap gap-5">
       {/* Primary Button */}
       <motion.a
         href="#projects"
@@ -77,12 +77,11 @@ export default function HeroButtons() {
           rounded-xl
           border
           border-purple-500/30
-          bg-white/5
+          bg-transparent
           px-7
           py-3
           font-semibold
           text-white
-          backdrop-blur-xl
           transition-colors
           duration-300
           hover:border-purple-400

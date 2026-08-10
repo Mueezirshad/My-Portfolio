@@ -10,20 +10,18 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <>
+    <main className="relative w-full max-w-[100vw] overflow-x-hidden text-white">
       <Navbar />
       
-      {/* <div className=" pointer-events-none absolute inset-0 -z-10">
+      <div className=" pointer-events-none absolute inset-0 -z-10">
         <Image
-          src="/moon.png" // Image file image public/ folder me honi chahiye
+          src="/moon.png" 
           alt="Portfolio Background"
-    // width={2203}
-    // height={2203}
     fill
-          priority // Hero image ho toh fast loading ke liye
+          priority 
           className="object-cover object-center opacity-30 mix-blend-screen" 
         />
-        </div> */}
+        </div>
 
       <Hero />
       <About/>
@@ -31,6 +29,6 @@ export default function Home() {
       <Projects />
       <Contact/>
       <Footer/>
-    </>
+    </main>
   );
 }

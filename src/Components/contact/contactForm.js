@@ -49,7 +49,6 @@ export default function ContactForm() {
         border-white/10
         bg-transparent
         p-8
-        backdrop-blur-xl
       "
     >
       {/* Name */}
