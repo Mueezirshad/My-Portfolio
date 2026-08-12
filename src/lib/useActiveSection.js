@@ -3,28 +3,33 @@
 import { useEffect, useState } from "react";
 
 export default function useActiveSection() {
-  const [active, setActive] = useState("home");
+  const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
-    const sections = document.querySelectorAll("section[id]");
+    const handleScroll = () => {
+      const sections = document.querySelectorAll("section[id]");
+      // Navbar height offset (around 150px-200px down from viewport top)
+      const scrollPosition = window.scrollY + 200;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActive(entry.target.id);
-          }
-        });
-      },
-      {
-        threshold: 0.4,
-      }
-    );
+      sections.forEach((section) => {
+        const sectionTop = section.offsetTop;
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute("id");
 
-    sections.forEach((section) => observer.observe(section));
+        if (
+          scrollPosition >= sectionTop &&
+          scrollPosition < sectionTop + sectionHeight
+        ) {
+          setActiveSection(sectionId.toLowerCase());
+        }
+      });
+    };
 
-    return () => observer.disconnect();
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll(); // Initial check on mount
+
+    return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  return active;
+  return activeSection;
 }

@@ -7,7 +7,7 @@ import * as THREE from "three";
 export default function ParticleMesh() {
   const pointsRef = useRef();
   const mouseRef = useRef({ x: 9999, y: 9999 }); // Initial position off-screen
-  const count = 2500; // Total glowing stars
+  const count = 1000; // Total glowing stars
 
   useEffect(() => {
     const handleMouseMove = (event) => {

@@ -66,7 +66,7 @@ export const projects = [
     description:
       "A modern full-stack e-commerce platform with authentication, Cloudinary image uploads and Stripe payments.",
 
-    image: "/projects/vanishmart.png",
+    image: "/vanishMart.png",
 
     tech: [
       "Next.js",
@@ -76,6 +76,10 @@ export const projects = [
     ],
 
     
+    live: "https://e-commerce-project-gamma-livid.vercel.app/",
+
+    github: "#",
+    
   },
 
   {
@@ -84,7 +88,7 @@ export const projects = [
     description:
       "Student management portal with Lost & Found, Complaints and Volunteer Registration.",
 
-    image: "/projects/saylani.png",
+    image: "/SaylaniPortal.png",
 
     tech: [
       "Next.js",
@@ -92,7 +96,7 @@ export const projects = [
       "Tailwind",
     ],
 
-    live: "#",
+    live: "https://saylani-it-hub-rho.vercel.app/complaints",
 
     github: "#",
   },

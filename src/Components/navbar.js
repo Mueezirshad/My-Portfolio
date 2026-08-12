@@ -37,8 +37,8 @@ export default function Navbar() {
     <nav
       className={`fixed left-0 top-0 z-50 w-full transition-all duration-300 ${
         scrolled
-          ? "bg-[#070511]/80 py-3 shadow-lg backdrop-blur-md border-b border-white/10"
-          : "bg-transparent py-5"
+          ? "py-8"
+          : "bg-transparent py-8"
       }`}
     >
       <div className="mx-auto flex w-full max-w-7xl items-center justify-between px-6 lg:px-8">
@@ -65,7 +65,7 @@ export default function Navbar() {
               >
                 <a
                   href={link.href}
-                  className={`block transition-all duration-300 hover:text-purple-400 ${
+                  className={`block hover:text-purple-400 ${
                     isActive
                       ? "font-semibold text-purple-400"
                       : "text-zinc-300"
@@ -76,7 +76,7 @@ export default function Navbar() {
 
                 {/* Active Underline */}
                 <span
-                  className={`absolute -bottom-2 left-0 h-[2px] rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 transition-all duration-300 ${
+                  className={`absolute -bottom-2 left-0 h-[2px] rounded-full bg-gradient-to-r from-violet-500 to-fuchsia-500 transition-all duration-1600 ${
                     isActive ? "w-full" : "w-0"
                   }`}
                 />

@@ -12,23 +12,23 @@ export default function Home() {
   return (
     <main className="relative w-full max-w-[100vw] overflow-x-hidden text-white">
       <Navbar />
-      
+
       <div className=" pointer-events-none absolute inset-0 -z-10">
         <Image
-          src="/moon.png" 
+          src="/moon.png"
           alt="Portfolio Background"
-    fill
-          priority 
-          className="object-cover object-center opacity-30 mix-blend-screen" 
+          fill
+          priority
+          className="object-cover object-center opacity-20 mix-blend-screen"
         />
-        </div>
+      </div>
 
       <Hero />
-      <About/>
-      <TechStack/>
+      <About />
+      <TechStack />
       <Projects />
-      <Contact/>
-      <Footer/>
+      <Contact />
+      <Footer />
     </main>
   );
 }

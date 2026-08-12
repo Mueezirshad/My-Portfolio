@@ -20,7 +20,7 @@ export default function About() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
-          className="mb-20 text-center"
+          className="mb-25 text-center"
         >
           <p className="mb-3 text-sm font-semibold uppercase tracking-[0.35em] text-purple-400">
             ABOUT ME
