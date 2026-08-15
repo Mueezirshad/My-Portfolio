@@ -3,6 +3,7 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
 import { Send } from "lucide-react";
+import emailjs from "@emailjs/browser";
 
 export default function ContactForm() {
   const [formData, setFormData] = useState({
@@ -12,6 +13,7 @@ export default function ContactForm() {
   });
 
   const [sent, setSent] = useState(false);
+  const [sending, setSending] = useState(false);
 
   function handleChange(e) {
     setFormData({
@@ -20,20 +22,40 @@ export default function ContactForm() {
     });
   }
 
-  function handleSubmit(e) {
+  async function handleSubmit(e) {
     e.preventDefault();
 
-    const subject = encodeURIComponent(
-      `Portfolio Contact from ${formData.name}`
-    );
+    setSending(true);
+    setSent(false);
 
-    const body = encodeURIComponent(
-      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
-    );
+    try {
+      await emailjs.send(
+"service_9ziwqdy",
+"template_fta2fv9"
+    ,
+        {
+          name: formData.name,
+          email: formData.email,
+          message: formData.message,
+        },
+        {
+          publicKey: "V4oHSfrLRgPqrv3ZV",
+        }
+      );
 
-    window.location.href = `mailto:irshadmoeez10@gmail.com?subject=${subject}&body=${body}`;
+      setSent(true);
 
-    setSent(true);
+      setFormData({
+        name: "",
+        email: "",
+        message: "",
+      });
+    } catch (error) {
+      console.error("Email failed:", error);
+      alert("Please try again.");
+    } finally {
+      setSending(false);
+    }
   }
 
   return (
@@ -51,8 +73,6 @@ export default function ContactForm() {
         p-8
       "
     >
-      {/* Name */}
-
       <div>
         <label className="mb-2 block text-sm text-zinc-400">
           Full Name
@@ -83,8 +103,6 @@ export default function ContactForm() {
         />
       </div>
 
-      {/* Email */}
-
       <div className="mt-5">
         <label className="mb-2 block text-sm text-zinc-400">
           Email Address
@@ -114,8 +132,6 @@ export default function ContactForm() {
           "
         />
       </div>
-
-      {/* Message */}
 
       <div className="mt-5">
         <label className="mb-2 block text-sm text-zinc-400">
@@ -148,8 +164,6 @@ export default function ContactForm() {
         />
       </div>
 
-      {/* Submit */}
-
       <motion.button
         whileHover={{
           scale: 1.03,
@@ -159,6 +173,7 @@ export default function ContactForm() {
           scale: 0.98,
         }}
         type="submit"
+        disabled={sending}
         className="
           mt-6
           flex
@@ -178,11 +193,17 @@ export default function ContactForm() {
           transition-all
           duration-300
           hover:shadow-[0_0_35px_rgba(168,85,247,0.35)]
+          disabled:cursor-not-allowed
+          disabled:opacity-70
         "
       >
         <Send size={18} />
 
-        {sent ? "Message Ready ✓" : "Send Message"}
+        {sending
+          ? "Sending..."
+          : sent
+          ? "Message Sent ✓"
+          : "Send Message"}
       </motion.button>
     </motion.form>
   );

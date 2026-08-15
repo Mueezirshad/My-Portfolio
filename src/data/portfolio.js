@@ -94,6 +94,7 @@ export const projects = [
       "Next.js",
       "Firebase",
       "Tailwind",
+      "MongoDB"
     ],
 
     live: "https://saylani-it-hub-rho.vercel.app/complaints",
