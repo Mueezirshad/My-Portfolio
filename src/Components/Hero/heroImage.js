@@ -113,7 +113,7 @@ export default function HeroImage() {
           shadow-[0_0_60px_rgba(168,85,247,0.25)]
         "
       >
-        <Image
+        <img
           src="/img4.jfif"
           alt="Moeez Irshad"
           width={360}
